@@ -1,12 +1,12 @@
 ﻿# 第1次隨堂-隨堂-QZ1
 >
->學號：1234567 
+>學號：108111121
 ><br />
->姓名：王小明 
+>姓名：郭柏葳 
 ><br />
->作業撰寫時間：180 (mins，包含程式撰寫時間)
+>作業撰寫時間：50 (mins，包含程式撰寫時間)
 ><br />
->最後撰寫文件日期：2022/10/12
+>最後撰寫文件日期：2022/9/27
 >
 
 本份文件包含以下主題：(至少需下面兩項，若是有多者可以自行新增)
@@ -14,19 +14,47 @@
 - [x]個人認為完成作業須具備觀念
 
 ## 說明程式與內容
+生成一個整數2維陣列變數大小為10* 10，名稱為ia_Map。
+生成一個整數1維陣列變數大小為10，名稱為ia_MIndex
+讓地雷儲存在ia_MIndex 隨機生成 0-99之中
 
-開始寫說明，該說明需說明想法，
-並於之後再對上述想法的每一部分將程式進一步進行展現，
-若需引用程式區則使用下面方法，
-若為.cs檔內程式除了於敘述中需註明檔案名稱外，
-還需使用語法` ```csharp 程式碼 ``` `，
-下段程式碼則為使用後結果：
 
 ```csharp
-public void mt_getResult(){
-    ...
-}
-```
+    public partial class Bomb : System.Web.UI.Page
+    {
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            int[] ia_Mlndex = new int[10] { 0, 7, 13, 28, 44, 62, 74, 75, 87, 90 };
+            char[,] ia_Map = new char[10, 10];
+            for(int i_Row = 0; i_Row < 10; i_Row++)
+            {
+                for (int i_Col = 0; i_Col < 10; i_Col++)
+                {
+                    ia_Map[i_Row, i_Col] = "0";
+                }
+            }   
+            for(int i_Ct = 0; i_Ct <10; i_Ct++)
+            {
+                int i_Row = ia_Mlndex / 10;
+                int i_Col = ia_Mlndex % 10;
+                ia_Map[i_Row i_Col] = "*";
+            }
+            /*尋訪2D array*/
+            for(int i_Row = 0; i_Row < 10; i_Row++)
+            {
+                for(int i_Col = 0; i_Col < 10; i_Col++)
+                {
+                    if (ia_Map[i_Row, i_Col] == '') {
+                        Response.Write("&nbsp;");
+                    }
+                    else { 
+                    }
+                    Response.Write(ia_Map[i_Row, i_Col]);
+                }
+            }
+            Response.Write("<br />");
+        }
+    }
 
 若要於內文中標示部分.aspx檔，則使用以下標籤` ```html 程式碼 ``` `，
 下段程式碼則為使用後結果：
@@ -52,7 +80,5 @@ public void mt_getResult(){
 
 
 ## 個人認為完成作業須具備觀念
-
-開始寫說明，需要說明本次作業個人覺得需學會那些觀念 (需寫成文章，需最少50字，
-並且文內不得有你、我、他三種文字)
+需有接觸過踩地雷的遊戲，以及對矩陣的基本觀念和正確使用方式，稍微進階一點的程式語言使用EX:for跟if的使用方式
 
